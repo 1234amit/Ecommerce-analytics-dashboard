@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-commerce Analytics Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+
+        .card-box {
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .card-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .chart-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #0d6efd, #00c6ff);
+            color: white;
+            padding: 20px;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+        }
+
+        .download-btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header text-center">
+
+            <h1>📊 E-commerce Analytics Dashboard</h1>
+
+            <p>Professional Sales Analytics System</p>
+
+        </div>
+
+        <!-- Top Cards -->
+
+        <div class="row mb-4">
+
+            <div class="col-md-6">
+
+                <div class="card card-box p-4">
+
+                    <h5>Total Revenue</h5>
+
+                    <h2 class="text-success">
+
+                        ৳ {{ total_revenue }}
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="card card-box p-4">
+
+                    <h5>Total Orders</h5>
+
+                    <h2 class="text-primary">
+
+                        {{ total_order }}
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Charts -->
+
+        <div class="row mb-4">
+
+            <div class="col-md-12">
+
+                <div class="card card-box p-4">
+
+                    <h4 class="mb-3">Monthly Sales</h4>
+
+                    <img class="chart-img" src="{{ url_for('static', filename='charts/monthly_sales.png') }}">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row mb-4">
+
+            <div class="col-md-6">
+
+                <div class="card card-box p-4">
+
+                    <h4>Product Sales</h4>
+
+                    <img class="chart-img" src="{{ url_for('static', filename='charts/product_sales.png') }}">
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="card card-box p-4">
+
+                    <h4>Region Sales</h4>
+
+                    <img class="chart-img" src="{{ url_for('static', filename='charts/region_sales.png') }}">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Download Button -->
+
+        <div class="text-center mb-5">
+
+            <a href="/download">
+
+                <button class="btn btn-success download-btn">
+
+                    ⬇ Download Product Report
+
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
